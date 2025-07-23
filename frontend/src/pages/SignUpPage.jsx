@@ -181,7 +181,7 @@ const {isPending,error,mutate}=useSignUp();
               {/* Illustration */}
               <div className="relative aspect-square max-w-sm mx-auto">
                 <img
-                  src="/vc5.png"
+                  src="/vc3.png"
                   alt="Language connection illustration"
                   className="w-full h-full"
                 />
