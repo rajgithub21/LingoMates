@@ -26,6 +26,10 @@ const HomePage = () => {
   });
   const {mutate:sendRequestMutation,isPending}=useMutation({
     mutationFn:sendFriendRequest,
+    onMutate: async (userId) => {
+    // Optimistically update local state
+    setOutgoingRequestIds((prev) => new Set(prev).add(userId));
+    },
     onSuccess:()=>queryClient.invalidateQueries({queryKey:["outgoingFriendReqs"]}),
   });
    useEffect(()=>{
